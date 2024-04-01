@@ -1,0 +1,24 @@
+﻿Azure.RequestFailedException: Service request failed.
+Status: 400 (Bad Request)
+
+Content:
+{"error": {"requestid": "eff51c81-1197-43c9-94fe-ce3d204ec425", "code": 400, "message": "An error occurred when calling Azure Cognitive Search: Azure Search: Please assign a proper column/field for vector search. It should be of type Collection(Edm.Single)"}}
+
+Headers:
+skip-error-remapping: REDACTED
+x-envoy-upstream-service-time: REDACTED
+apim-request-id: REDACTED
+x-ms-client-request-id: 3503af5c-a024-48ff-8dad-1fece23df848
+Strict-Transport-Security: REDACTED
+X-Content-Type-Options: REDACTED
+x-ms-region: REDACTED
+x-ratelimit-remaining-requests: REDACTED
+x-ratelimit-remaining-tokens: REDACTED
+Date: Mon, 01 Apr 2024 15:29:14 GMT
+Content-Length: 259
+Content-Type: application/json; charset=UTF-8
+
+   at Azure.Core.HttpPipelineExtensions.ProcessMessageAsync(HttpPipeline pipeline, HttpMessage message, RequestContext requestContext, CancellationToken cancellationToken)
+   at Azure.AI.OpenAI.OpenAIClient.GetChatCompletionsStreamingAsync(ChatCompletionsOptions chatCompletionsOptions, CancellationToken cancellationToken)
+   at Azure.AI.Details.Common.CLI.ChatCommand.GetChatCompletionsAsync(OpenAIClient client, ChatCompletionsOptions options, HelperFunctionCallContext funcContext, String text) in /mnt/vss/_work/1/s/src/ai/commands/chat_command.cs:line 617
+   at Azure.AI.Details.Common.CLI.ChatCommand.<>c__DisplayClass15_0.<<GetNormalChatTextHandler>b__0>d.MoveNext() in /mnt/vss/_work/1/s/src/ai/commands/chat_command.cs:line 455
