@@ -1,0 +1,14 @@
+print(AZURE_OPENAI_SERVICE)
+https://cog-uya6vxkzwsky6.openai.azure.com/
+azure_credential = azure.identity.DefaultAzureCredential()
+token_provider = azure.identity.get_bearer_token_provider(azure_credential, "https://cognitiveservices.azure.com/.default")
+
+openai_client = openai.AzureOpenAI(
+    api_version="2024-02-01",
+    azure_endpoint=f"https://{AZURE_OPENAI_SERVICE}.openai.azure.com",
+    #api_key="73b097a0a07f4a529016e0e52292190d"
+    azure_ad_token_provider=token_provider
+    )
+
+get_embeddings_response = openai_client.embeddings.create(input="test", model="ada")
+test = get_embeddings_response.data[0].embedding
