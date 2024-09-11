@@ -1,3 +1,5 @@
+az account set --subscription 6cca5161-fc70-4a03-8308-88b1544a059b
+
 azure_credential = azure.identity.DefaultAzureCredential()
 token_provider = azure.identity.get_bearer_token_provider(azure_credential, "https://cognitiveservices.azure.com/.default")
 
